@@ -1,0 +1,11 @@
+<plugin>
+  <name>XPlayer</name>
+	<version>1.0</version>
+	<class>com.xel.XMain</class>
+	<paths>
+		<path>//XPlayer</path>
+	</paths>
+	<settings>
+		<toggle id="Left"/>
+	</settings>
+</plugin>
