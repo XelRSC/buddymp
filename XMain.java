@@ -98,6 +98,7 @@ public class XMain extends WidgetPluginBase{
 		return EnumSet.of(_defaultLocation);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public Node content(Location arg0) {
 		try {
