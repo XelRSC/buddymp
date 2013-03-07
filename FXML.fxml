@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.xel.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="AnchorPane" maxHeight="1.7976931348623157E308" prefHeight="600.0" xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <VBox fx:id="mainvbox" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #2c3135;&#10;-fx-border-color: #494d4f;&#10;-fx-border-width: 1;" VBox.vgrow="ALWAYS">
+      <children>
+        <HBox prefHeight="56.0" prefWidth="194.0" style="-fx-background-color: black;&#10;-fx-border-color:#494d4f;&#10;-fx-border-width: 1;">
+          <children>
+            <Label fx:id="DTime" prefHeight="42.0" prefWidth="90.0" text="00:00" textFill="#00a3ff">
+              <effect>
+                <Glow level="0.6057324840764331">
+                  <input>
+                    <Reflection topOffset="-25.0" />
+                  </input>
+                </Glow>
+              </effect>
+              <font>
+                <Font size="20.0" />
+              </font>
+              <HBox.margin>
+                <Insets left="2.0" />
+              </HBox.margin>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+              <children>
+                <Label fx:id="DNowPlaying" prefHeight="28.0" prefWidth="100.0" text="XPlayer v0.1">
+                  <font>
+                    <Font size="10.0" fx:id="x5" />
+                  </font>
+                  <textFill>
+                    <Color blue="0.800" green="0.512" red="0.000" fx:id="x1" />
+                  </textFill>
+                </Label>
+                <Slider fx:id="VolSlider" majorTickUnit="0.1" max="1.0" minorTickCount="1" prefWidth="90.0" value="0.5">
+                  <effect>
+                    <Lighting diffuseConstant="2.0" specularConstant="1.6650793650793652" specularExponent="12.380952380952381" surfaceScale="0.0">
+                      <bumpInput>
+                        <Shadow />
+                      </bumpInput>
+                      <light>
+                        <javafx.scene.effect.Light.Distant color="$x1" />
+                      </light>
+                    </Lighting>
+                  </effect>
+                  <VBox.margin>
+                    <Insets left="-5.0" right="2.0" />
+                  </VBox.margin>
+                </Slider>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <Pane prefHeight="20.0" prefWidth="194.0" style="-fx-border-width: 1;&#10;-fx-border-color:#494d4f;">
+          <children>
+            <Slider fx:id="SeekSlider" layoutX="4.0" majorTickUnit="1.0" prefHeight="20.000003051757812" prefWidth="186.0">
+              <effect>
+                <Lighting diffuseConstant="2.0" specularConstant="1.6650793650793652" specularExponent="12.380952380952381" surfaceScale="0.0">
+                  <bumpInput>
+                    <Shadow />
+                  </bumpInput>
+                  <light>
+                    <javafx.scene.effect.Light.Distant color="#0083cc" />
+                  </light>
+                </Lighting>
+              </effect>
+            </Slider>
+          </children>
+          <padding>
+            <Insets left="2.0" right="12.0" />
+          </padding>
+          <VBox.margin>
+            <Insets top="-1.0" fx:id="x4" />
+          </VBox.margin>
+        </Pane>
+        <HBox prefHeight="35.0" prefWidth="194.0" style="-fx-border-width: 1;&#10;-fx-border-color:#494d4f;" VBox.margin="$x4">
+          <children>
+            <Button fx:id="PBPrevious" minHeight="21.0" minWidth="30.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="&lt;">
+              <font>
+                <Font size="8.0" fx:id="x2" />
+              </font>
+              <HBox.margin>
+                <Insets left="5.0" top="5.0" fx:id="x3" />
+              </HBox.margin>
+            </Button>
+            <Button fx:id="PBPlay" font="$x2" minHeight="21.0" minWidth="30.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="►" HBox.margin="$x3" />
+            <Button fx:id="PBPause" font="$x2" minHeight="21.0" minWidth="30.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="ll" HBox.margin="$x3" />
+            <Button fx:id="PBStop" font="$x2" minHeight="21.0" minWidth="30.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="■" HBox.margin="$x3" />
+            <Button fx:id="PBNext" font="$x2" minHeight="21.0" minWidth="30.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="&gt;" HBox.margin="$x3" />
+          </children>
+          <padding>
+            <Insets left="5.0" />
+          </padding>
+        </HBox>
+        <ListView fx:id="DPlayList" prefHeight="200.0" prefWidth="200.0" style="-fx-border-width: 1;&#10;-fx-border-color:#494d4f;&#10;-fx-selection-bar-text: blue;&#10;-fx-background-insets: 0, 0, 1, 2;" VBox.margin="$x4" VBox.vgrow="ALWAYS" />
+        <HBox prefHeight="28.0" prefWidth="194.0" style="-fx-border-width: 1;&#10;-fx-border-color:#494d4f;" VBox.margin="$x4">
+          <children>
+            <Button fx:id="PLAdd" font="$x2" maxHeight="20.0" maxWidth="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="30.000099999997474" style="-fx-background-insets: 0, 0, 1, 2;" text="+">
+              <contextMenu>
+                <ContextMenu>
+                  <items>
+                    <MenuItem id="PLAddSongs" mnemonicParsing="false" text="Add Song(s)" fx:id="PLAddSongs" />
+                    <MenuItem id="PLAddFolder" mnemonicParsing="false" text="Add Folder" fx:id="PLAddFolder" />
+                  </items>
+                </ContextMenu>
+              </contextMenu>
+              <HBox.margin>
+                <Insets left="2.0" top="2.0" fx:id="x6" />
+              </HBox.margin>
+            </Button>
+            <Button fx:id="PLRemove" font="$x2" maxHeight="20.0" maxWidth="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="-" HBox.margin="$x6">
+              <contextMenu>
+                <ContextMenu>
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Remove Selected" />
+                    <MenuItem mnemonicParsing="false" text="Remove All" />
+                  </items>
+                </ContextMenu>
+              </contextMenu>
+            </Button>
+            <Button fx:id="PLList" font="$x5" maxHeight="20.0" maxWidth="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="=" HBox.margin="$x6">
+              <contextMenu>
+                <ContextMenu>
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Save Playlist" />
+                    <MenuItem mnemonicParsing="false" text="Load Playlist" />
+                  </items>
+                </ContextMenu>
+              </contextMenu>
+            </Button>
+            <Button fx:id="PLSettings" font="$x2" maxHeight="20.0" maxWidth="40.0" minWidth="40.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-insets: 0, 0, 1, 2;" text="S" HBox.margin="$x6" />
+          </children>
+          <padding>
+            <Insets left="11.0" />
+          </padding>
+        </HBox>
+      </children>
+      <padding>
+        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      </padding>
+    </VBox>
+  </children>
+</VBox>
